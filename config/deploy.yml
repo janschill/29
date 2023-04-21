@@ -1,0 +1,8 @@
+service: twni
+image: user/my-app
+servers:
+  - 167.172.103.224
+registry:
+  username: my-user
+  password:
+    - MRSK_REGISTRY_PASSWORD

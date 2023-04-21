@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>HALLO <%= @user.name.upcase %></h1>
+<p>You are invited to </p>
+
+<%# <%= render @user %> %>
+
+<div>
+
+  <%= render "form", user: @user %>
+
+</div>

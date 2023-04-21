@@ -1,0 +1,232 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@font-face {
+  font-family: "VioletSans";
+  src: url("VioletSans-Regular.woff2");
+}
+
+@font-face {
+  font-family: "Nurom";
+  src: url("Nurom-Bold.ttf");
+}
+
+html {
+  font-size: 14px;
+  background: #000;
+  color: #fff;
+  /* color: #000; */
+  font-family: "VioletSans",sans-serif;
+  font-style: normal;
+  font-weight: normal
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Nurom", sans-serif;
+}
+
+@media(min-width: 760px) {
+  html {
+      font-size:16px
+  }
+
+  h1 {
+      font-size:26px
+
+  }
+}
+
+@media(min-width: 1290px) {
+  html {
+      font-size:18px
+  }
+
+  h1 {
+      font-size:26px
+
+  }
+}
+
+@media(min-width: 1600px) {
+  html {
+      font-size:22px
+  }
+
+  h1 {
+      font-size:26px
+
+  }
+}
+
+body {
+  line-height: 1.5;
+  text-rendering: optimizeLegibility
+}
+
+a {
+  text-decoration: underline;
+  color: #000
+}
+
+a[href^=tel] {
+  text-decoration: none;
+  color: inherit;
+  cursor: default
+}
+
+a:hover {
+  text-decoration: none
+}
+
+a:focus,button:focus {
+  outline-color: #ffed00
+}
+
+b,strong {
+  font-weight: bold
+}
+
+i,em {
+  font-style: italic
+}
+
+strong em,strong i,b em,b i,em strong,em b,i strong,i b {
+  font-weight: bold;
+  font-style: italic
+}
+
+hr {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  display: block;
+  border-top: 1px solid
+}
+
+iframe,img {
+  border: 0;
+  max-width: 100%;
+  display: inline-block
+}
+
+audio,canvas,video,img {
+  height: auto;
+  vertical-align: bottom
+}
+
+address {
+  font-style: normal
+}
+
+ul {
+  list-style: square inside
+}
+
+ol {
+  list-style: decimal inside
+}
+
+::-moz-selection {
+  background: #83d0f5;
+  color: #000;
+  text-shadow: none
+}
+
+::selection {
+  background: #83d0f5;
+  color: #000;
+  text-shadow: none
+}
+
+p {
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  hyphens: auto
+}
+
+p,blockquote {
+  margin-bottom: 1rem
+}
+
+p:last-child,blockquote:last-child {
+  margin-bottom: 0
+}
+
+input {
+  font-family: "VioletSans",sans-serif;
+}
+
+button {
+  background-color: #fff;
+  border: 15px solid #e56420;
+  padding: 20px 50px;
+  font-weight: bold;
+  font-size: 30px;
+  position: relative;
+  color: #e56420;
+  cursor: pointer;
+  font-family: "VioletSans",sans-serif;
+}
+
+button:hover,button:active{
+  color:white;
+  background-color:green;
+  transition: all 0.3s ease;
+}
+
+button:hover:active{
+  background-color:white;
+  border:15px solid green;
+  transition: all 0.3s ease;
+}
+
+.main {
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  line-height: 1;
+}
+
+.title span {
+  background: linear-gradient(233deg,#e56420,#c22525,#3d9c31,#37bbde);
+  background-blend-mode: hard-light;
+  display: block;
+  padding: 0rem 2rem;
+  border: 30px solid white;
+}
+
+.title--full {
+  font-size: 30vw;
+  margin-bottom: 3rem;
+  line-height: 1;
+}
+
+.button--enter {
+  display: block;
+  width: 80%;
+  font-size: 5vw;
+}
+
+.button--enter:hover span {
+  display: none;
+}
+
+.button--enter:hover:before {
+  content: "I WANT FUN!";
+}
