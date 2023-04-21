@@ -1,0 +1,55 @@
+<main class="index">
+  <header class="header">Header</header>
+  <div class="content">
+    Main Container
+    <div>
+     <%= image_tag("location.jpg", alt: "Location Spot.", class: "image") %>
+    </div>
+  </div>
+  <aside class="aside">
+    <h2 class="large">Menschen</h2>
+    <h3>Going</h3>
+    <ul class="ul">
+      <% @going_users.each do |user| %>
+        <li>
+          <%= user.hide_name ? @redact_emojis.sample : user.name %>
+          <% if user.partner %>
+            <ul class="ul ul--nested">
+              <li><%= user.partner %></li>
+            </ul>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+    <h3>Not Going</h3>
+    <ul class="ul">
+      <% @not_going_users.each do |user| %>
+        <li><%= user.hide_name ? @redact_emojis.sample : user.name %></li>
+      <% end %>
+    </ul>
+    <h3>Invited</h3>
+    <ul class="ul">
+      <% @undecided_users.each do |user| %>
+        <li><%= user.hide_name == nil ? user.name : @redact_emojis.sample %></li>
+      <% end %>
+    </ul>
+  </aside>
+  <footer class="footer">Footer</footer>
+  <div class="float circle">
+    <svg viewBox="0 0 200 200" width="200" height="200">
+      <defs>
+        <path id="circle"
+          d="
+            M 100, 100
+            m -37, 0
+            a 37,37 0 1,1 74,0
+            a 37,37 0 1,1 -74,0"/>
+      </defs>
+      <text font-size="25">
+        <textPath xlink:href="#circle">
+          26.05.2023-16:00-
+        </textPath>
+      </text>
+    </svg>
+  </div>
+</main>

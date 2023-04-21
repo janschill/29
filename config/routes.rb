@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get "/" => "root#show"
+  get "/" => "root#start"
+  get "/index" => "root#index"
   # get "users/:id" => "user#show"
 
   resources :users
