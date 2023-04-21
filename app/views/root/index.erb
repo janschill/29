@@ -30,7 +30,7 @@
     <h3>Invited</h3>
     <ul class="ul">
       <% @undecided_users.each do |user| %>
-        <li><%= user.hide_name == nil ? user.name : @redact_emojis.sample %></li>
+        <li><%= user.hide_name == true || user.hide_name == nil ? @redact_emojis.sample : user.name %></li>
       <% end %>
     </ul>
   </aside>

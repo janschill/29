@@ -32,3 +32,5 @@ end
 
 
 gem "ulid", "~> 1.4"
+
+gem "importmap-rails", "~> 1.1"
