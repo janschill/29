@@ -1,7 +1,37 @@
 <main class="index">
-  <header class="header">Header</header>
+  <header class="header"><marquee><% if @current_user %>Hallo <%= @current_user.name %>! <% end %>Service Announcement: I have been around the sun 29 times. Great achievement. Let's not celebrate me but all our lives. Come early, leave late. Are you still reading this? If so, here the poem "Erlkoenig" by Johann Wolfgang Goether: Wer reitet so spät durch Nacht und Wind? Es ist der Vater mit seinem Kind; er hat den Knaben wohl in dem Arm, er fasst ihn sicher, er hält ihn warm. Mein Sohn, was birgst du so bang dein Gesicht? — Siehst Vater, du den Erlkönig nicht? Den Erlkönig mit Kron’ und Schweif? — Mein Sohn, es ist ein Nebelstreif. "Du liebes Kind, komm, geh mit mir! Gar schöne Spiele spiel’ ich mit dir; manch bunte Blumen sind an dem Strand, meine Mutter hat manch gülden Gewand." Mein Vater, mein Vater, und hörest du nicht, was Erlenkönig mir leise verspricht? — Sei ruhig, bleibe ruhig, mein Kind: In dürren Blättern säuselt der Wind. "Willst, feiner Knabe, du mit mir gehn? Meine Töchter sollen dich warten schön; meine Töchter führen den nächtlichen Reihn, und wiegen und tanzen und singen dich ein." Mein Vater, mein Vater und siehst du nicht dort Erlkönigs Töchter am düstern Ort? — Mein Sohn, mein Sohn, ich seh’ es genau: Es scheinen die alten Weiden so grau. "Ich liebe dich, mich reizt deine schöne Gestalt; und bist du nicht willig, so brauch ich Gewalt." Mein Vater, mein Vater, jetzt fasst er mich an! Erlkönig hat mir ein Leids getan! — Dem Vater grauset’s, er reitet geschwind, er hält in den Armen das ächzende Kind, erreicht den Hof mit Mühe und Not; in seinen Armen das Kind war tot.</marquee></header>
   <div class="content">
-    Main Container
+     <div class="float circle">
+      <svg viewBox="0 0 200 200" width="200" height="200">
+        <defs>
+          <path id="circle"
+            d="
+              M 100, 100
+              m -37, 0
+              a 37,37 0 1,1 74,0
+              a 37,37 0 1,1 -74,0"/>
+        </defs>
+        <text font-size="25">
+          <textPath xlink:href="#circle">
+            26.05.2023-16:00-
+          </textPath>
+        </text>
+      </svg>
+    </div>
+    <h2 class="large">Auskunft</h2>
+    <p>Let's hyg ourselves out in the greens.</p>
+    <dl>
+      <dt>Activities</dt>
+      <dd>Drinking, snacking, chit-chats in several languages, sun-bathing, Spikeball, gymnastics</dd>
+      <dt>Food</dt>
+      <dd>A few snacks</dd>
+      <dt>Drinks</dt>
+      <dd>I will have some <i>Wibes</i> (Wine & Beers), but bring a bottle yourself</dd>
+      <dt>Time</dt>
+      <dd>From 15:00</dd>
+      <dt>Location</dt>
+      <dd>By Christiania (see image below)</dd>
+    </dl>
     <div>
      <%= image_tag("location.jpg", alt: "Location Spot.", class: "image") %>
     </div>
@@ -30,26 +60,10 @@
     <h3>Invited</h3>
     <ul class="ul">
       <% @undecided_users.each do |user| %>
-        <li><%= user.hide_name == true || user.hide_name == nil ? @redact_emojis.sample : user.name %></li>
+        <li><%= user.hide_name == true || user.hide_name != nil ? @redact_emojis.sample : user.name %></li>
       <% end %>
     </ul>
   </aside>
   <footer class="footer">Footer</footer>
-  <div class="float circle">
-    <svg viewBox="0 0 200 200" width="200" height="200">
-      <defs>
-        <path id="circle"
-          d="
-            M 100, 100
-            m -37, 0
-            a 37,37 0 1,1 74,0
-            a 37,37 0 1,1 -74,0"/>
-      </defs>
-      <text font-size="25">
-        <textPath xlink:href="#circle">
-          26.05.2023-16:00-
-        </textPath>
-      </text>
-    </svg>
-  </div>
+
 </main>

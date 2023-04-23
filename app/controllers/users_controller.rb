@@ -1,34 +1,35 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :set_user, only: %i[ show edit update ]
 
   # GET /users
-  def index
-    @users = User.all
-  end
+  # def index
+  #   @users = User.all
+  # end
 
   # GET /users/1
   def show
+    session[:user_id] = @user.id
   end
 
   # GET /users/new
-  def new
-    @user = User.new
-  end
+  # def new
+  #   @user = User.new
+  # end
 
   # GET /users/1/edit
   def edit
   end
 
   # POST /users
-  def create
-    @user = User.new(user_params)
+  # def create
+  #   @user = User.new(user_params)
 
-    if @user.save
-      redirect_to @user, notice: "User was successfully created."
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
+  #   if @user.save
+  #     redirect_to @user, notice: "User was successfully created."
+  #   else
+  #     render :new, status: :unprocessable_entity
+  #   end
+  # end
 
   # PATCH/PUT /users/1
   def update
@@ -40,10 +41,10 @@ class UsersController < ApplicationController
   end
 
   # DELETE /users/1
-  def destroy
-    @user.destroy!
-    redirect_to users_url, notice: "User was successfully destroyed.", status: :see_other
-  end
+  # def destroy
+  #   @user.destroy!
+  #   redirect_to users_url, notice: "User was successfully destroyed.", status: :see_other
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

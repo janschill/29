@@ -3,6 +3,7 @@ class RootController < ApplicationController
   end
 
   def index
+    @current_user = current_user
     @redact_emojis = ["🐶","🐱","🐭","🐰","🦊","🐻","🐼","🐻‍❄️","🐨","🐯","🦁","🐮","🐷","🐸","🐵","🐥","🦉","🐙"]
     @going_users = User.where(going: true)
     @not_going_users = User.where(going: false)

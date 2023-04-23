@@ -24,12 +24,13 @@
 }
 
 html {
-  font-size: 14px;
-  background: #fff;
+  font-size: 16px;
+  background: #ff4000;
   color: #000;
   font-family: "VioletSans",sans-serif;
   font-style: normal;
-  font-weight: normal
+  font-weight: normal;
+  cursor: url("med-tiny-jan.png"), auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -38,40 +39,42 @@ h1, h2, h3, h4, h5, h6 {
 
 @media(min-width: 760px) {
   html {
-      font-size:16px
+      font-size:20px
   }
 
   h1 {
-      font-size:26px
+      font-size:30px
 
   }
 }
 
 @media(min-width: 1290px) {
   html {
-      font-size:18px
+      font-size:24px
   }
 
   h1 {
-      font-size:26px
+      font-size:30px
 
   }
 }
 
 @media(min-width: 1600px) {
   html {
-      font-size:22px
+      font-size:34px
   }
 
   h1 {
-      font-size:26px
+      font-size:38px
 
   }
 }
 
 body {
   line-height: 1.5;
-  text-rendering: optimizeLegibility
+  text-rendering: optimizeLegibility;
+  padding: 1rem;
+  /* cursor: url("tiny-jan.png"); */
 }
 
 a {
@@ -129,7 +132,8 @@ address {
 }
 
 ul {
-  list-style: square inside
+  list-style-image: url("tiny-tiny-jan.png");
+  /* list-style: square inside */
 }
 
 ol {
@@ -240,29 +244,43 @@ a:hover:active, button:hover:active{
 .index {
   width: 100%;
   height: 100vh;
-  display: grid;
-  grid-template-columns: 0.15fr 1fr;
+  grid-template-columns: 0.25fr 1fr;
 }
 
-.content, .aside {
+@media(min-width: 760px) {
+  .index {
+    display: grid;
+  }
+}
+
+.header, .content, .aside, .footer {
   padding: 1rem;
   margin: 1rem;
-  border: 1px solid #000;
+  border: 7px solid purple;
+  border-radius: 15px;
+  box-shadow: 15px 15px;
 }
 
 .header {
+  display: flex;
   grid-row: 1 / 2;
   grid-column: 1 / 3;
+  background-color: #bce954;
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
   grid-row: 2 / 3;
   grid-column: 2 / 3;
+  background-color: salmon;
 }
 
 .aside {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
+  background-color: #e91e63;
 }
 
 .footer {
@@ -275,9 +293,14 @@ a:hover:active, button:hover:active{
 }
 
 .image {
+  border-radius: 15px;
   border: 5px dotted purple;
   padding: 0.5rem;
-  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
 }
 
 .large {
@@ -294,9 +317,9 @@ a:hover:active, button:hover:active{
 }
 
 .float.circle {
-  position:fixed;
-  top: 20px;
-  right: 20px;
+  position:absolute;
+  top: 10px;
+  right: 10px;
   animation-name: spin;
   animation-duration: 4000ms;
   animation-iteration-count: infinite;
