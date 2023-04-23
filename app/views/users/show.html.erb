@@ -1,13 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<main class="index index--show">
+  <header class="header header--show"><span>HALLO <%= @user.name.upcase %></span></header>
+  <div class="content">
+    <h2 class="large">Your Page</h2>
+    <p>This is your very own private page. No one else can see this.</p>
+    <p>Here you can update your status, add a partner you want to bring, hide your name, and write into the guest book.</p>
+  </div>
+  <aside class="aside">
+    <h2 class="large">Update Your Info</h2>
+    <%= render "form", user: @user %>
+    <p style="color: green"><%= notice %></p>
 
-<h1>HALLO <%= @user.name.upcase %></h1>
-<p>This is your very own private page. No one else can see this.</p>
-<p>Here you can update your status, add a partner you want to bring, hide your name, and write into the guest book.</p>
+    <%# <div id="pickerContainer"></div> %>
+  </aside>
+  <footer class="footer">
+    <h2 class="large">Guest Book</h2>
 
-<div id="pickerContainer"></div>
+  </footer>
+</main>
 
-<div>
-
-  <%= render "form", user: @user %>
-
-</div>

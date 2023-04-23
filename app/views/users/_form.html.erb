@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
+  <div class="form-input">
+    <%= form.label :name, "Your name", style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
-  <div>
-    <%= form.label :going, style: "display: block" %>
+  <div class="form-input form-input--inline">
+    <%= form.label :going, "Are you coming?", style: "display: block" %>
     <%= form.check_box :going %>
   </div>
 
-  <div>
-    <%= form.label :partner, style: "display: block" %>
+  <div class="form-input">
+    <%= form.label :partner, "Bringing someone? (Leave blank if coming alone)", style: "display: block" %>
     <%= form.text_field :partner %>
   </div>
 
-  <div>
-    <%= form.label :hide_name, style: "display: block" %>
-    <%= form.check_box :hide_name %>
+  <div class="form-input form-input--inline">
+    <%= form.label :hide_name, "Hide your name from others", style: "display: block" %>
+    <%= form.check_box :hide_name, class: "form-check_box" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Update", class: "button button--input" %>
   </div>
 <% end %>

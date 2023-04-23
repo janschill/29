@@ -13,6 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+ :root {
+  --orange: #ff4000;
+  --green: #bce954;
+  --red: #e91e63;
+  --spinach: #1b5e20;
+  --purple: purple;
+  --salmon: salmon;
+  --olympic: #008ecc;
+}
+
 @font-face {
   font-family: "VioletSans";
   src: url("VioletSans-Regular.woff2");
@@ -25,7 +36,7 @@
 
 html {
   font-size: 16px;
-  background: #ff4000;
+  background: var(--orange);
   color: #000;
   font-family: "VioletSans",sans-serif;
   font-style: normal;
@@ -172,25 +183,26 @@ input {
 
 a, button {
   background-color: #fff;
-  border: 15px solid #e56420;
+  border: 15px solid var(--spinach);
   padding: 20px 50px;
   font-weight: bold;
   font-size: 30px;
   position: relative;
-  color: #e56420;
+  color: var(--spinach);
   cursor: pointer;
   font-family: "VioletSans",sans-serif;
+  border-radius: 15px;
 }
 
 a:hover, button:hover, a:active, button:active {
   color:white;
-  background-color:green;
+  background-color:var(--olympic);
   transition: all 0.3s ease;
 }
 
 a:hover:active, button:hover:active{
   background-color:white;
-  border:15px solid green;
+  border:15px solid var(--olympic);
   transition: all 0.3s ease;
 }
 
@@ -214,7 +226,7 @@ a:hover:active, button:hover:active{
 }
 
 .title span {
-  background: linear-gradient(233deg,#e56420,#c22525,#3d9c31,#37bbde);
+  background: linear-gradient(233deg,var(--orange),#c22525,#3d9c31,#37bbde);
   background-blend-mode: hard-light;
   display: block;
   padding: 0rem 2rem;
@@ -225,6 +237,19 @@ a:hover:active, button:hover:active{
   font-size: 30vw;
   margin-bottom: 3rem;
   line-height: 1;
+}
+
+.button--input {
+  background-color: #fff;
+  border: 5px solid var(--olympic);
+  padding: 10px 50px;
+  font-weight: bold;
+  font-size: 30px;
+  position: relative;
+  color: var(--olympic);
+  cursor: pointer;
+  font-family: "VioletSans",sans-serif;
+  border-radius: 15px;
 }
 
 .button--enter {
@@ -243,8 +268,12 @@ a:hover:active, button:hover:active{
 
 .index {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   grid-template-columns: 0.25fr 1fr;
+}
+
+.index--show {
+  grid-template-columns: 0.5fr 0.5fr;
 }
 
 @media(min-width: 760px) {
@@ -265,7 +294,13 @@ a:hover:active, button:hover:active{
   display: flex;
   grid-row: 1 / 2;
   grid-column: 1 / 3;
-  background-color: #bce954;
+  background-color: var(--green);
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.header--show {
+  font-family: "Nurom";
 }
 
 .content {
@@ -274,27 +309,39 @@ a:hover:active, button:hover:active{
   position: relative;
   grid-row: 2 / 3;
   grid-column: 2 / 3;
-  background-color: salmon;
+  background-color: var(--salmon);
+  margin-bottom: 2rem;
 }
 
 .aside {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-  background-color: #e91e63;
+  background-color: var(--red);
+  margin-bottom: 2rem;
 }
 
 .footer {
   grid-column: 1 / 3;
   grid-row: 3 / 4;
+  margin-bottom: 2rem;
+  background-color: var(--olympic);
+}
+
+.ul {
+  margin-left: 1rem;
+}
+
+.ul li {
+  padding-left: 5px;
 }
 
 .ul--nested {
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
 .image {
   border-radius: 15px;
-  border: 5px dotted purple;
+  border: 5px dotted var(--purple);
   padding: 0.5rem;
   height: 100%;
   box-sizing: border-box;
@@ -328,4 +375,64 @@ a:hover:active, button:hover:active{
 
 .float.circle svg {
   fill: purple;
+}
+
+.form-input {
+  margin-bottom: 0.5rem;
+}
+
+.form-input--inline {
+  display: flex;
+  align-items: center;
+}
+
+.form-input--inline label {
+  margin-right: 0.5rem;
+}
+
+.form-input input[type=checkbox]  {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+.form-input input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--spinach);
+}
+
+.form-input input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.form-input input[type=text]  {
+  background-color: #fff;
+  border: 5px solid var(--spinach);
+  padding: 10px;
+  font-size: 30px;
+  color: var(--spinach);
+  cursor: pointer;
+  font-family: "VioletSans",sans-serif;
+  border-radius: 15px;
+}
+
+.form-input label {
+  display: block;
+  font-size: 22px;
+  font-family: "Nurom";
+  margin-bottom: 5px;
 }
