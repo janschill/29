@@ -8,5 +8,6 @@ class RootController < ApplicationController
     @going_users = User.where(going: true)
     @not_going_users = User.where(going: false)
     @undecided_users = User.where(going: nil)
+    @messages = Message.all
   end
 end

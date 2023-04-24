@@ -18,3 +18,13 @@ users = user_names.each { |user|
 }
 
 p "Created #{users.count} users"
+
+messages = [
+  "Hallo people", "It's me", "Here you can spam away", "Lorem ipsum", "Heute ist ein schoener Tag", "Kom nu!"
+]
+
+User.first(3).each { |user|
+  user.messages.create({ content: messages.sample })
+}
+
+# p "Created #{messages.count} messages"

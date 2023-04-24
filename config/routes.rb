@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :messages
+
   get "/" => "root#start"
   get "/index" => "root#index"
   # get "users/:id" => "user#show"
