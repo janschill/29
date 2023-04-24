@@ -1,27 +1,22 @@
 class MessagesController < ApplicationController
-  # before_action :set_room, only: %i[ new create ]
-
   def new
     @message = Message.new
   end
 
   def create
-    @message = @current_user.messages.new(message_params)
-    @message.save
-
-
+    @message = current_user.messages.new(message_params)
 
     respond_to do |format|
-      format.turbo_stream
-    #   format.html { redirect_to  }
+      if @message.save
+        format.turbo_stream
+        format.html { redirect_to message_url(@message), notice: "Message was successfully sent." }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
     end
   end
 
   private
-    # def set_room
-    #   @room = Room.find(params[:room_id])
-    # end
-
     def message_params
       params.require(:message).permit(:content)
     end
