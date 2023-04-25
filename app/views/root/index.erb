@@ -45,6 +45,7 @@
   </div>
   <aside class="aside">
     <h2 class="large">Menschen</h2>
+    <% if @current_user %><p style="font-size: 0.85rem"><%= link_to "Click here to update your info", user_path(@current_user) %></p><% end %>
     <h3><%= @going_users.count %> people going</h3>
     <ul class="ul">
       <% @going_users.each do |user| %>

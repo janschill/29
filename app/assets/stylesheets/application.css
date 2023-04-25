@@ -410,22 +410,24 @@ a:hover:active, button:hover:active{
   margin: 0;
   font: inherit;
   color: currentColor;
-  width: 1.15em;
-  height: 1.15em;
-  border: 0.15em solid currentColor;
-  border-radius: 0.15em;
+  width: 1.55em;
+  height: 1.55em;
+  border: 0.15em solid var(--spinach);
+  border-radius: 0.35em;
   transform: translateY(-0.075em);
   display: grid;
   place-content: center;
+  cursor: pointer;
 }
 
 .form-input input[type="checkbox"]::before {
   content: "";
-  width: 0.65em;
-  height: 0.65em;
+  width: 0.95em;
+  height: 0.95em;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em var(--spinach);
+  box-shadow: inset 1em 1em var(--olympic);
+  border-radius: 0.15em;
 }
 
 .form-input input[type="checkbox"]:checked::before {

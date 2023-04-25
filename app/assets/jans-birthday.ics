@@ -28,7 +28,7 @@ UID:1682334536901-73540@ical.marudot.com
 DTSTART;TZID=Europe/Copenhagen:20230526T140000
 DTEND;TZID=Europe/Copenhagen:20230526T230000
 SUMMARY:Jan's Birthday
-URL:http://29.janschill.de/index
+URL:http://29.janschill.de/
 LOCATION:Langebrogade 18B\, 1411 København K
 END:VEVENT
 END:VCALENDAR

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :messages
 
-  get "/" => "root#start"
-  get "/index" => "root#index"
+  get "/start" => "root#start"
+  get "/" => "root#index"
   # get "users/:id" => "user#show"
 
   resources :users
@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "root#index"
 end
