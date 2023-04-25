@@ -53,7 +53,7 @@
           <% if @current_user && @current_user.id == user.id %>
             <%= link_to @current_user.name, user_path(@current_user) %>
           <% else %>
-            <%= user.hide_name == true || user.hide_name != nil ? @redact_emojis.sample : user.name %>
+            <%= user.hide_name == false || user.hide_name == nil ? @redact_emojis.sample : user.name %>
           <% end %>
           <% if user.partner && user.partner != "" %>
             <ul class="ul ul--nested">
@@ -70,7 +70,7 @@
           <% if @current_user && @current_user.id == user.id %>
             <%= link_to @current_user.name, user_path(@current_user) %>
           <% else %>
-            <%= user.hide_name == true || user.hide_name != nil ? @redact_emojis.sample : user.name %>
+            <%= user.hide_name == false || user.hide_name == nil ? @redact_emojis.sample : user.name %>
           <% end %>
         </li>
       <% end %>

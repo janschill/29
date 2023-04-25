@@ -37,7 +37,7 @@
 }
 
 html {
-  font-size: 18px;
+  font-size: 22px;
   background: var(--orange);
   color: #000;
   font-family: "VioletSans",sans-serif;
@@ -52,23 +52,21 @@ h1, h2, h3, h4, h5, h6 {
 
 @media(min-width: 760px) {
   html {
-      font-size:20px
+      font-size:24px
   }
 
   h1 {
-      font-size:30px
-
+      font-size:32px
   }
 }
 
 @media(min-width: 1290px) {
   html {
-      font-size:24px
+      font-size:26px
   }
 
   h1 {
-      font-size:30px
-
+      font-size:32px
   }
 }
 
@@ -79,7 +77,6 @@ h1, h2, h3, h4, h5, h6 {
 
   h1 {
       font-size:38px
-
   }
 }
 
@@ -87,7 +84,6 @@ body {
   line-height: 1.5;
   text-rendering: optimizeLegibility;
   padding: 1rem;
-  /* cursor: url("tiny-jan.png"); */
 }
 
 a {
@@ -227,18 +223,32 @@ a:hover:active, button:hover:active{
   line-height: 1;
 }
 
-.title span {
+.title--enter span {
   background: linear-gradient(233deg,var(--orange),#c22525,#3d9c31,#37bbde);
   background-blend-mode: hard-light;
   display: block;
-  padding: 0rem 2rem;
-  border: 30px solid white;
+  padding: 2rem;
+  border: 15px solid var(--white);
+  color: var(--white);
 }
 
-.title--full {
-  font-size: 30vw;
+.title--enter {
+  font-family: "VioletSans";
+  font-size: 40vw;
   margin-bottom: 3rem;
   line-height: 1;
+}
+
+@media(min-width: 760px) {
+  .title--enter span {
+    padding: 2rem;
+    border: 30px solid var(--white);
+    color: var(--white);
+  }
+
+  .title--enter {
+    font-size: 30vw;
+  }
 }
 
 .button--input {
@@ -262,7 +272,12 @@ a:hover:active, button:hover:active{
 .button--enter {
   display: block;
   width: 80%;
-  font-size: 5vw;
+  font-size: 7vw;
+  border-radius: 0;
+  font-family: "Nurom",sans-serif;
+  padding: 15px 10px;
+  border: 15px solid var(--spinach);
+  width: 85%;
 }
 
 .button--enter:hover span {
@@ -403,7 +418,7 @@ a:hover:active, button:hover:active{
   margin-right: 0.5rem;
 }
 
-.form-input input[type=checkbox]  {
+.form-input input[type="checkbox"]  {
   -webkit-appearance: none;
   appearance: none;
   background-color: var(--white);
@@ -443,6 +458,7 @@ a:hover:active, button:hover:active{
   cursor: auto;
   font-family: "VioletSans",sans-serif;
   border-radius: 15px;
+  width: 90%;
 }
 
 .chat__input .form-input input[type=text]  {

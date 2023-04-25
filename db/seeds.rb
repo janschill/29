@@ -10,7 +10,7 @@ require "ulid"
 User.destroy_all
 
 user_names = [
-  "Birgit","Lisa","Lukas","NJ","Nele","Pia","Curtis","Bitty","Roman","Olivia","Felix","Liv","Daniel","Frederik","Line","Alexandre","Rasmus","Hans","Karl","Harald","Malthe","William","Jakob","Jonas","Mads","Emma","Joshua","Søren","Raphael","Neikh Bakht","Karen","Selma","Marie","Tilde","Matt","Anita","Thomas","Nony","Makzym","Sasha","Aaron","Christine","Rebeca","Fernada", "Felo", "Mogi"
+  "Jan", "Birgit","Lisa","Lukas","NJ","Nele","Pia","Curtis","Bitty","Roman","Olivia","Felix","Liv","Daniel","Frederik","Line","Alexandre","Rasmus","Hans","Karl","Harald","Malthe","William","Jakob","Jonas","Mads","Emma","Joshua","Søren","Raphael","Neikh Bakht","Karen","Selma","Marie","Tilde","Matt","Anita","Thomas","Nony","Makzym","Sasha","Aaron","Christine","Rebeca","Fernada", "Felo", "Mogi"
 ]
 
 users = user_names.each { |user|
@@ -20,11 +20,9 @@ users = user_names.each { |user|
 p "Created #{users.count} users"
 
 messages = [
-  "Hallo people", "It's me", "Here you can spam away", "Lorem ipsum", "Heute ist ein schoener Tag", "Kom nu!"
+  "Hello, here you can leave a message for everyone to see"
 ]
 
-User.first(3).each { |user|
-  user.messages.create({ content: messages.sample })
-}
+User.first.messages.create({ content: messages.first })
 
 # p "Created #{messages.count} messages"
