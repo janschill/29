@@ -1,10 +1,10 @@
 <main class="index index--show">
-  <header class="header header--show"><span>HALLO <%= @user.name.upcase %>!</span></header>
+  <header class="header header--show"><span><%= @user.emoji %> HALLO <%= @user.name.upcase %>! <%= @user.emoji %></span></header>
   <div class="content">
     <h2 class="large">Your Page</h2>
     <p>This is your very own private page. No one else can see this.</p>
     <p>Don't share this link with anyone else. Otherwise, they can impersonate you and write funky stuff in your name.</p>
-    <p>Here you can update your status, add a partner you want to bring, make your name visible to others, and write into the guest book.</p>
+    <p>Here you can update your status, add a partner you want to bring, make your name visible to others, and look at the emoji the machine has picked for you.</p>
   </div>
   <aside class="aside">
     <h2 class="large">Update Your Info</h2>

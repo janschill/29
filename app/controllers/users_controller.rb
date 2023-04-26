@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    session[:user_id] = @user.id unless session[:user_id]
+    # session[:user_id] = @user.id unless session[:user_id]
   end
 
   # GET /users/new

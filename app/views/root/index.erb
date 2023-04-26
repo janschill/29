@@ -4,7 +4,7 @@
     <h2 class="large">Auskunft</h2>
     <p>It's my birthday and I want to have a cozy day with all of you. Let's have a few drinks, snacks, and chats out in the green.</p>
     <p>Please don't bring any gifts!</p>
-    <p>Bring friends if you like.</p>
+    <p>Bring your partner or friend if you like.</p>
     <p>Let's hyg ourselves.</p>
     <h3 class="large">Details</h3>
     <dl>
@@ -45,7 +45,7 @@
   </div>
   <aside class="aside">
     <h2 class="large">Menschen</h2>
-    <% if @current_user %><p style="font-size: 0.85rem"><%= link_to "Click here to update your info", user_path(@current_user) %></p><% end %>
+    <% if @current_user %><%= link_to "Update Your Info", user_path(@current_user), class: "button button--input button--mensch" %><% end %>
     <h3><%= @going_users.count %> people going</h3>
     <ul class="ul">
       <% @going_users.each do |user| %>
@@ -53,7 +53,7 @@
           <% if @current_user && @current_user.id == user.id %>
             <%= link_to @current_user.name, user_path(@current_user) %>
           <% else %>
-            <%= @current_user.name == "Jan" || user.hide_name == true ? user.name : @redact_emojis.sample  %>
+            <%= (@current_user && @current_user.name == "Jan") || user.hide_name == true ? user.name : user.emoji  %>
           <% end %>
           <% if user.partner && user.partner != "" %>
             <ul class="ul ul--nested">
@@ -70,7 +70,7 @@
           <% if @current_user && @current_user.id == user.id %>
             <%= link_to @current_user.name, user_path(@current_user) %>
           <% else %>
-            <%= @current_user.name == "Jan" || user.hide_name == true ? user.name : @redact_emojis.sample  %>
+            <%= (@current_user && @current_user.name == "Jan") || user.hide_name == true ? user.name : user.emoji  %>
           <% end %>
         </li>
       <% end %>

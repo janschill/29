@@ -1,7 +1,7 @@
 <div id="<%= dom_id message %>" class="chat__message">
   <div class="chat__meta">
     <span class="chat__user">
-      <%= message.user.hide_name == false || message.user.hide_name == nil ? @redact_emojis.sample : message.user.name %>
+      <%= (@current_user && @current_user.name == "Jan") || message.user.hide_name == true ? "#{message.user.emoji} #{message.user.name}" : message.user.emoji  %>
     </span>
     <time class="chat__time"><%= message.created_at.strftime("%H:%M") %></time>
   </div>

@@ -8,13 +8,16 @@
 # #   Character.create(name: "Luke", movie: movies.first)
 
 # User.destroy_all
+# Message.destroy_all
 
 # user_names = [
 #   "Jan", "Birgit","Lisa","Lukas","NJ","Nele","Pia","Curtis","Bitty","Roman","Olivia","Felix","Liv","Daniel","Frederik","Line","Alexandre","Rasmus","Hans","Karl","Harald","Malthe","William","Jakob","Jonas","Mads","Emma","Joshua","Søren","Raphael","Neikh Bakht","Karen","Selma","Marie","Tilde","Matt","Anita","Thomas","Nony","Makzym","Sasha","Aaron","Christine","Rebeca","Fernada", "Felo", "Mogi"
 # ]
 
-# users = user_names.each { |user|
-#   User.create({ name: user })
+# redact_emojis = ["🐶","🐱","🐭","🐰","🦊","🐻","🐼","🐻‍❄️","🐨","🐯","🦁","🐮","🐷","🐸","🐵","🐥","🦉","🐙", "🕷️", "🐒", "🪿", "🦆", "🐺", "🐗", "🐴", "🐝", "🐛", "🦋", "🐌", "🐞", "🐜", "🦂", "🐟", "🦭", "🦧", "🦤", "🦦", "🦔", "🐓", "🦜", "🦫", "🍆", "🌽", "🍌", "🥕", "🌶️", "🥖"].shuffle
+
+# users = user_names.each_with_index { |user, index|
+#   User.create({ name: user, emoji: redact_emojis[index] })
 # }
 
 # p "Created #{users.count} users"

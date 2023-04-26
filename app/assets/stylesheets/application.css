@@ -264,6 +264,23 @@ a:hover:active, button:hover:active{
   border-radius: 15px;
 }
 
+.button--mensch {
+  background-color: var(--olympic);
+  border: 5px solid var(--purple);
+  color: var(--white);
+  padding: 15px;
+  font-size: 24px;
+  margin: 15px 0;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.button--mensch:hover {
+  color: var(--purple);
+  background-color: var(--green);
+}
+
 .button--salmon {
   border: 5px solid var(--salmon);
   font-size: 22px;
@@ -341,6 +358,13 @@ a:hover:active, button:hover:active{
   grid-row: 2 / 3;
   background-color: var(--red);
   margin-bottom: 2rem;
+}
+
+.index--show .content {
+  grid-column: 1 / 2;
+}
+.index--show .aside {
+  grid-column: 2 / 3;
 }
 
 .footer {
