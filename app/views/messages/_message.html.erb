@@ -3,7 +3,7 @@
     <span class="chat__user">
       <%= (@current_user && @current_user.name == "Jan") || message.user.hide_name == true ? "#{message.user.emoji} #{message.user.name}" : message.user.emoji  %>
     </span>
-    <time class="chat__time"><%= message.created_at.strftime("%H:%M") %></time>
+    <time class="chat__time"><%= message.created_at.strftime("%e.%b %H:%M") %></time>
   </div>
   <div class="chat__content">
     <%= message.content %>

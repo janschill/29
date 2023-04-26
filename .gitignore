@@ -33,3 +33,4 @@
 .env.erb
 vendor/
 deploy.yml
+users.csv
