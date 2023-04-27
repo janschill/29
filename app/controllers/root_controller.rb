@@ -6,7 +6,7 @@ class RootController < ApplicationController
 
   def index
     @current_user = current_user
-    @going_users = User.where(going: true)
+    @going_users = User.where(going: true).order("updated_at DESC")
     @undecided_users = User.where(going: nil)
     @messages = Message.all
   end

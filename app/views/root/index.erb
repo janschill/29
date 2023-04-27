@@ -3,19 +3,19 @@
   <div class="content">
     <h2 class="large">Auskunft</h2>
     <p>It's my birthday and I want to have a cozy day with all of you. Let's have a few drinks, snacks, and chats out in the green and see what the day brings.</p>
-    <p>Please don't bring any gifts!</p>
-    <p>Bring your partner or friend if you like instead.</p>
+    <p>Please don't bring any gifts – bring your partner or friend if you like instead.</p>
+    <p>Also something to sit on, it's a picnic.</p>
     <p>If it rains, we'll find a bar.</p>
     <p>Let's hyg ourselves.</p>
     <p><i>Check this website from time to time for updated information.</i></p>
     <h3 class="large">Details</h3>
     <dl>
       <dt class="dt">When?</dt>
-      <dd class="dd">26.05.23 from 15:00 until we are cold</dd>
+      <dd class="dd"><a href="/jans-birthday.ics">26.05.23 from 15:00 until we are cold</a></dd>
       <dt class="dt">Where</dt>
       <dd class="dd">By Christiania (see image below)</dd>
       <dt class="dt">What?</dt>
-      <dd class="dd">Drinking, snacking, chit-chatting, sun-bathing, Spikeballing and all other fun things</dd>
+      <dd class="dd">Drinking, snacking, chit-chatting, sun-bathing, Spikeballing and all other shenanigans we can think of</dd>
       <dt class="dt">Food?</dt>
       <dd class="dd">A few snacks</dd>
       <dt class="dt">Drinks?</dt>
@@ -59,7 +59,7 @@
           <% end %>
           <% if user.partner && user.partner != "" %>
             <ul class="ul ul--nested">
-              <li><%= user.partner %></li>
+              <li><%= (@current_user && @current_user.name == "Jan") || user.hide_name == true ? user.partner : user.emoji  %></li>
             </ul>
           <% end %>
         </li>
