@@ -48,7 +48,7 @@
   <aside class="aside">
     <h2 class="large">Menschen</h2>
     <% if @current_user %><%= link_to "Update Your Info", user_path(@current_user), class: "button button--input button--mensch" %><% end %>
-    <h3><%= @going_users.count %> people going</h3>
+    <h3><%= @going_users.count + @going_users.count { |u| u.partner != nil && u.partner != "" } %> people going</h3>
     <ul class="ul">
       <% @going_users.each do |user| %>
         <li>
