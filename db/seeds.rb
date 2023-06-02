@@ -11,7 +11,7 @@
 # Message.destroy_all
 
 # user_names = [
-#   "Jan", "Birgit","Lisa","Lukas","NJ","Nele","Pia","Curtis","Bitty","Roman","Olivia","Felix","Liv","Daniel","Frederik","Line","Alexandre","Rasmus","Hans","Karl","Harald","Malthe","William","Jakob","Jonas","Mads","Emma","Joshua","Søren","Raphael","Neikh Bakht","Karen","Selma","Marie","Tilde","Matt","Anita","Thomas","Nony","Makzym","Sasha","Aaron","Christine","Rebeca","Fernada", "Felo", "Mogi"
+#   "Jan", "Birgit"
 # ]
 
 # redact_emojis = ["🐶","🐱","🐭","🐰","🦊","🐻","🐼","🐻‍❄️","🐨","🐯","🦁","🐮","🐷","🐸","🐵","🐥","🦉","🐙", "🕷️", "🐒", "🪿", "🦆", "🐺", "🐗", "🐴", "🐝", "🐛", "🦋", "🐌", "🐞", "🐜", "🦂", "🐟", "🦭", "🦧", "🦤", "🦦", "🦔", "🐓", "🦜", "🦫", "🍆", "🌽", "🍌", "🥕", "🌶️", "🥖"].shuffle
